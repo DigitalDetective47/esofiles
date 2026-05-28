@@ -9,9 +9,7 @@ tk.withdraw()
 tk.clipboard_clear()
 with open(argv[1]) as f:
     tk.clipboard_append("<pre><nowiki>\n")
-    tk.clipboard_append(
-        escape(f.read(), quote=True).replace("&#x27;", "&apos;").removesuffix("\n")
-    )
+    tk.clipboard_append(escape(f.read()).removesuffix("\n"))
     tk.clipboard_append("\n</nowiki></pre>")
 tk.update()
 tk.destroy()
